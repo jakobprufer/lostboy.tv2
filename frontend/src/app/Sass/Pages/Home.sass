@@ -1,0 +1,47 @@
+.home
+    display: flex
+    align-items: flex-end
+    justify-content: flex-start
+    // height: 100dvh
+    padding-bottom: 48px
+    transition: 0.4s
+
+    height: 580px
+
+    @media (max-width: $logoBreakpoint1)
+        height: 350px
+
+    @media (max-width: $logoBreakpoint2)
+        justify-content: flex-start
+        height: 160px
+
+.collapsed
+    height: 0px
+    transition: 0.4s ease
+
+// .scrollSection2
+//     scroll-snap-align: start
+
+// .scrollSection1
+//     // scroll-snap-align: start
+
+// .scrollContainer
+//     scroll-snap-type: y mandatory
+//     overflow-y: auto
+//     position: relative
+//     overscroll-behavior-y: contain
+
+// .scrollContainer
+//     height: 200vh
+//     overflow-y: scroll
+//     scroll-snap-type: y mandatory
+//     // background: yellow
+
+// .scrollSection1
+//     height: 150px
+//     scroll-snap-align: start
+
+// .scrollSection2
+//     height: 2000px
+//     scroll-snap-align: start
+//     // background: red

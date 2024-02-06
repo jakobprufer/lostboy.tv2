@@ -1,0 +1,27 @@
+.burgerModal
+    position: fixed
+    width: 100vw
+    height: 100vh
+    z-index: 5
+    background: #00000081
+    backdrop-filter: blur(10px)
+    transition: 0.4s
+    opacity: 1
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
+.burgerModal.hidden
+    opacity: 0
+    backdrop-filter: blur(1px)
+    transition: 0.4s
+    pointer-events: none
+    // display: none
+
+.burgerNav
+    display: flex
+    flex-direction: column
+    gap: 32px
+    user-select: none
+    align-items: center

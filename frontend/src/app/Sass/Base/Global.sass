@@ -1,0 +1,70 @@
+body
+    background: $background
+
+.page
+    max-width: min(calc(100% - 10vw), 1400px)
+    margin: auto
+    // overflow: hidden
+    // filter: blur(10px)
+    position: relative
+    z-index: 1
+
+.pageContent
+    width: 100%
+    padding-top: 160px
+    padding-bottom: 160px
+    min-height: 100vh
+
+//hide schrollbar
+
+// Hide the scrollbar track
+::-webkit-scrollbar
+    width: 0em // Adjust the width as per your requirement
+
+::-moz-scrollbar
+    width: 0em // Adjust the width as per your requirement
+
+// Hide the scrollbar handle
+::-webkit-scrollbar-thumb
+    background-color: #ffffff00 // Adjust the color as per your requirement
+
+::-moz-scrollbar-thumb
+    background-color: #ffffff00 // Adjust the color as per your requirement
+
+//hide horizontal scrollbar
+@media screen and (min-width: 960px)
+    html
+        margin-left: calc(100vw - 100%)
+        margin-right: 0
+
+    body
+        overflow-x: hidden
+
+//simple password
+
+.passwordForm
+    width: 100vw
+    height: 100dvh
+    display: flex
+    justify-content: center
+    align-items: center
+    pointer-events: all
+
+form
+    pointer-events: all
+    z-index: 5
+    height: 2rem
+
+    input
+        all: unset
+        border-bottom: $font 1px solid
+        font-size: 24pt
+        max-width: 200px
+
+    button
+        all: unset
+        font-size: 24pt
+        padding-left: 16px
+
+.fonttrans
+    color: $fonttrans

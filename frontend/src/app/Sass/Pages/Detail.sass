@@ -1,0 +1,88 @@
+.detail
+    width: 100%
+    min-height: 100dvh
+    position: relative
+    padding-bottom: 160px
+
+    @media (max-width: 560px) //to leave space for footer
+        padding-bottom: 220px
+
+    a
+        text-decoration: underline
+
+.detailContent
+    padding-top: 160px
+    // max-width: max(50%, 600px)
+    max-width: 800px
+    margin: auto
+
+    @media (max-width: $logoBreakpoint2)
+        padding-top: 80px
+
+// .offsetLeft
+//     max-width: 800px
+//     text-align: left
+
+// .offsetRight
+//     max-width: 800px
+//     margin-left: auto
+//     text-align: right
+
+.detailColumnLayout
+    display: flex
+    flex-direction: row
+    gap: 16px 32px
+
+.detailLeftColumn
+    flex: 2
+
+.detailRightColumn
+    flex: 3
+    max-width: 50%
+
+@media screen and (max-width: 10000px)
+    .detailColumnLayout
+        flex-direction: column
+
+    .detailRightColumn
+        order: -1
+        max-width: 100%
+
+.detailImg
+    max-width: 100%
+    // height: fit-content
+
+.detailVideo
+    max-width: 100%
+    height: fit-content
+
+.detailCaption
+    font-style: italic
+    // font-size: 14pt
+    padding-top: 8px
+
+.detailH
+    display: flex
+    align-items: baseline
+
+.detailHLogo
+    height: 48pt
+    display: inline-block
+    transform: translate(0, 28px)
+
+.detailHText
+    display: inline-block
+    word-wrap: break-word
+    line-height: 130%
+
+.pressLinks a
+    font-size: 16pt
+    font-weight: 300
+    white-space: pre-wrap
+    white-space: -moz-pre-wrap
+    white-space: -pre-wrap
+    white-space: -o-pre-wrap
+    overflow-wrap: break-word
+    word-wrap: break-word
+    word-break: break-word
+    hyphens: auto

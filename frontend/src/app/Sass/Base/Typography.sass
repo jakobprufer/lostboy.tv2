@@ -1,0 +1,87 @@
+html
+    color: $font
+body
+    font-size: 16pt
+    font-weight: 500
+
+@media screen and (min-width: $logoBreakpoint1)
+    .responsiveBreak
+        display: none
+
+.medText
+    font-size: 18pt
+    line-height: 24pt
+    font-weight: 400
+    background-color: #10100eb7
+    // box-shadow: 0 0 8px 8px $background inset
+
+    @media (max-width: $logoBreakpoint2)
+        font-size: 16pt
+        line-height: 22pt
+
+.smallText
+    font-size: 18pt
+    line-height: 20pt
+    font-weight: 400
+
+    @media (max-width: $logoBreakpoint2)
+        font-size: 20pt
+        line-height: 24pt
+
+.xsmallText
+    font-size: 14pt
+    line-height: 20pt
+    font-weight: 400
+
+p
+    margin-bottom: 24px
+
+.smallH
+    font-weight: 600
+    font-size: 16pt
+    line-height: 18pt
+    color: $font
+    text-transform: uppercase
+
+    // @media (max-width: $logoBreakpoint2)
+    //     font-size: 40pt
+
+.medH
+    font-weight: 600
+    font-size: 28pt
+    // margin-bottom: 16px
+    color: $font
+    text-transform: uppercase
+
+.homeText
+    font-size: 48pt
+    // max-width: 400px
+    // text-align: right
+    // margin-left: auto
+
+    @media (max-width: $logoBreakpoint2)
+        font-size: 40pt
+        text-align: left
+
+.footerText1
+    font-size: 48pt
+    // color: $fonttrans
+    // opacity: 0
+    // filter: drop-shadow(1px 1px 10px #ffffff4e)
+
+    @media (max-width: $logoBreakpoint2)
+        font-size: 48pt
+
+.footerText2
+    font-weight: 600
+    font-size: 18pt
+    text-align: right
+    // color: $fonttrans
+    display: none
+
+    @media (max-width: $logoBreakpoint1)
+        font-size: 48pt
+
+.largeText
+    font-weight: 500
+    font-size: 32pt

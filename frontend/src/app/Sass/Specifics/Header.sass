@@ -1,0 +1,239 @@
+.header
+    position: fixed
+    width: 100%
+    max-width: inherit
+    top: 0
+    margin-top: 48px
+    display: flex
+    justify-content: flex-start
+    user-select: none
+    color: $invert
+    filter: invert(0)
+    mix-blend-mode: difference
+    z-index: 100
+    // pointer-events: none
+
+    a
+        cursor: none
+
+    @media screen and ( max-width: $logoBreakpoint2 )
+        margin-top: 16px
+
+//og text logo
+// .logo
+//     white-space: nowrap
+//     transition: 0.2s
+//     position: relative
+//     font-size: 48pt
+//     color: $font
+
+// .logo1
+//     position: relative
+//     display: inline-block
+//     width: 111px
+//     transition: 0.4s
+
+// .logo1.atHome
+//     font-size: 300pt
+//     top: 10px
+//     // top: -30px if you want to logo aligned with the navItems
+//     // pointer-events: none
+
+// @media (max-width: $logoBreakpoint1)
+//     .logo1.atHome
+//         font-size: 200pt
+
+// @media (max-height: 820px)
+//     .logo1.atHome
+//         font-size: 200pt
+
+// @media (max-width: $logoBreakpoint2)
+//     .logo1.atHome
+//         font-size: 100pt
+
+// .logo2
+//     position: relative
+//     display: inline-block
+//     width: 111px
+//     transition: 0.4s
+
+// .logo2.atHome
+//     font-size: 300pt
+//     // top: 195px if you want to logo aligned with the navItems
+//     top: 235px
+//     left: 71px
+//     // pointer-events: none
+
+// @media (max-width: $logoBreakpoint1)
+//     .logo2.atHome
+//         top: 160px
+//         left: 10px
+//         font-size: 200pt
+
+// @media (max-height: 820px)
+//     .logo2.atHome
+//         top: 160px
+//         left: 10px
+//         font-size: 200pt
+
+// @media (max-width: $logoBreakpoint2)
+//     .logo2.atHome
+//         top: 86px
+//         left: -50px
+//         font-size: 100pt
+
+//svg logo
+.logoClickableArea
+    width: 220px
+    z-index: 100
+    height: 75px
+    // pointer-events: auto
+
+.logo
+    white-space: nowrap
+    transition: 0.2s
+    position: fixed
+    font-size: 48pt
+    color: $font
+    user-select: none
+
+.logo1
+    position: relative
+    display: block
+    width: 111px
+    transition: 0.4s
+    user-select: none
+    // top: 16px
+
+.logo1.atHome
+    width: 650px
+    top: 10px
+
+@media (max-width: $logoBreakpoint1)
+    .logo1.atHome
+        width: 435px
+
+@media (max-height: 820px)
+    .logo1.atHome
+        width: 435px
+
+@media (max-width: $logoBreakpoint2)
+    .logo1.atHome
+        width: 218px
+
+// @media (pointer:none), (pointer:coarse)
+//     .logo1.atHome
+//         width: 218px
+
+.logo2
+    position: relative
+    display: block
+    width: 111px
+    transition: 0.4s
+    user-select: none
+    // top: 16px
+    left: 112px
+    top: -70px
+
+    // @media (pointer:none), (pointer:coarse)
+    //     left: 130px
+
+.logo2.atHome
+    width: 650px
+    // top: 195px if you want to logo aligned with the navItems
+    top: -190px
+    left: 170px
+    // pointer-events: none
+
+@media (max-width: $logoBreakpoint1)
+    .logo2.atHome
+        top: -125px
+        left: 115px
+        width: 435px
+
+@media (max-height: 820px)
+    .logo2.atHome
+        top: -125px
+        left: 115px
+        width: 435px
+
+@media (max-width: $logoBreakpoint2)
+    .logo2.atHome
+        top: -58px
+        left: 57px
+        width: 218px
+
+// @media (pointer:none), (pointer:coarse)
+//     .logo2.atHome
+//         top: 84px
+//         left: 76px
+//         width: 218px
+
+nav
+    display: flex
+    justify-content: space-between
+    gap: 32px
+    max-height: 64px
+    z-index: 10
+    margin-left: auto
+
+    @media ( max-width: $logoBreakpoint1 )
+        display: none
+
+navLink
+        // pointer-events: auto
+
+.navItem
+    font-size: 48pt
+    border-bottom: 1px solid #ffffff00
+    transition: 0.4s
+    color: $font
+    // pointer-events: fill
+
+nav .active
+    border-bottom: 1px solid $font
+    color: $font
+
+.burgerModal a.active
+    border-bottom: 1px solid $font
+    color: $font
+
+.hamburgerCont
+    max-width: min(calc(100% - 10vw), 1400px)
+    margin: auto
+    display: flex
+    justify-content: flex-end
+
+.hamburger
+    top: 58px
+    transform: scale(1.3)
+    height: fit-content
+    display: none
+    z-index: 10
+    position: fixed
+
+    @media ( max-width: $logoBreakpoint1 )
+        display: block
+
+    @media ( max-width: $logoBreakpoint2 )
+        top: 26px
+
+.tagLine
+    position: relative
+    top: -420px
+    left: 800px
+    width: 500px
+    white-space: wrap
+    font-size: 61pt
+    color: $fonttrans
+    transition: 0.1s
+    display: none
+
+.hiddenTagLine
+    opacity: 0
+    transition: 0.2s
+
+.smallTagLine
+    font-size: 21pt
+    margin-top: 8px
+    display: none

@@ -1,0 +1,87 @@
+.about
+    // display: flex
+    // flex-direction: row
+    // align-items: flex-start
+    // justify-content: space-between
+    // gap: 64px 64px
+    // height: 100dvh
+    // font-size: 32pt
+    // padding-bottom: 48px
+    // padding-top: 240px
+    min-height: 100dvh
+    padding-bottom: 120px
+    // text-align: center
+
+    a
+        border-bottom: 1px solid $font
+
+    @media (max-width: 560px) //to leave space for footer
+        padding-bottom: 200px
+
+.aboutContent
+    padding-top: 160px
+
+    @media (max-width: $logoBreakpoint2)
+        padding-top: 160px
+
+.aboutMenu
+    display: flex
+    flex-direction: row
+    gap: 16px
+
+    // @media screen and ( max-width: $logoBreakpoint1 )
+    //     flex-direction: column
+    //     gap: 16px
+
+.aboutExtra
+    @media screen and ( max-width: $logoBreakpoint2 )
+        display: none
+
+.aboutMenuItem
+    padding-bottom: 0
+    width: fit-content
+    color: $fonttrans
+    border-bottom: 1px solid #00000000
+    transition: 0.2s
+
+.aboutMenuItem.active
+    border-bottom: 1px solid $font
+    color: $font
+    transition: 0.2s
+
+.aboutText
+    padding-top: 16px
+    display: flex
+    gap: 72px
+    max-width: 1032px
+    transition: 0.2s
+
+    @media screen and ( max-width: $logoBreakpoint1 )
+        flex-direction: column
+        gap: 0
+        padding-top: 16px
+
+.aboutTextH
+    font-weight: 600
+    padding-bottom: 8px
+
+.aboutTextColumn
+    max-width: 48%
+
+    @media screen and ( max-width: $logoBreakpoint1 )
+        max-width: 600px
+
+// .aboutColumn
+//     max-width: 296px
+
+//     @media (max-width: $logoBreakpoint2)
+//         max-width: 500px
+
+// .aboutColumnL
+//     max-width: 480px
+
+// .aboutSection
+//     display: flex
+//     gap: 0 32px
+//     flex-wrap: wrap
+//     // justify-content: flex-end
