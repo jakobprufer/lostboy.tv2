@@ -4,11 +4,11 @@ export async function getProjects() {
   const client = createClient({
     projectId: "vlugq6ei",
     dataset: "production",
-    useCdn: true,
+    useCdn: false,
   });
 
   return client.fetch(
-    groq`*[_type == "project" && visible == true] {
+    groq`*[_type == "project" && visible == true]|order(orderRank) {
     title,
     slug,
     client,

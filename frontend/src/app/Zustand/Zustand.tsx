@@ -9,6 +9,7 @@
 
 import { MouseEventHandler } from "react";
 import { create } from "zustand";
+import { Dispatch, SetStateAction } from "react";
 
 interface ZustandInterface {
   mouseOutEvent: MouseEventHandler<HTMLElement>;
@@ -17,6 +18,8 @@ interface ZustandInterface {
   setMouseOverEvent: (mouseOverEvent: MouseEventHandler<HTMLElement>) => void;
   atHome: boolean;
   setAtHome: (atHome: boolean) => void;
+  hamburgerOpen: boolean;
+  setHamburgerOpen: Dispatch<SetStateAction<boolean>>;
 }
 
 export const Zustand = create<ZustandInterface>()((set) => ({
@@ -28,4 +31,10 @@ export const Zustand = create<ZustandInterface>()((set) => ({
     set({ mouseOverEvent }),
   atHome: false,
   setAtHome: (atHome: boolean) => set({ atHome }),
+  hamburgerOpen: false,
+  setHamburgerOpen: (value: SetStateAction<boolean>) =>
+    set((state) => ({
+      hamburgerOpen:
+        typeof value === "function" ? value(state.hamburgerOpen) : value,
+    })),
 }));

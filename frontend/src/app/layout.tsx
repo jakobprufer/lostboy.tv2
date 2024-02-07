@@ -5,6 +5,8 @@ import "./Sass/Main.sass";
 import StarryBackground from "./Components/StarryBackground";
 import Cursor from "./Components/Cursor";
 import Header from "./Components/Header";
+import BurgerModal from "./Components/BurgerModal";
+import Logo from "./Components/Logo";
 
 export const metadata: Metadata = {
   title: "Lost Boy | Music Supervision London | Sonic Worlds",
@@ -27,6 +29,8 @@ export default function RootLayout({
         <StarryBackground />
         <Cursor />
         <Header />
+        <BurgerModal />
+        <Logo />
         {children}
       </body>
     </html>

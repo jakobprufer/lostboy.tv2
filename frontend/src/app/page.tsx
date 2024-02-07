@@ -1,29 +1,13 @@
-"use client";
-import { useState } from "react";
+import WorkGrid from "./Components/WorkGrid";
 import { getProjects } from "./Client";
 
-export default function Work() {
-  const [selectedVideo, setSelectedVideo] = useState(0);
-  const [modalOpen, setModalOpen] = useState(false);
-
-  // video modal
-  const openModal = (index: number) => {
-    setSelectedVideo(index);
-    setModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setModalOpen(false);
-  };
-
+export default async function Home() {
   //get data
-  const projects = getProjects();
+  const projects = await getProjects();
 
   return (
     <main className="pageContent">
-      {projects.map((project) => (
-        <div key={project.id}>{project.title}</div>
-      ))}
+      <WorkGrid projects={projects} />
     </main>
   );
 }
