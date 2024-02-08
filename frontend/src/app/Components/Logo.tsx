@@ -1,12 +1,19 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Zustand } from "../Zustand/Zustand";
 import { usePathname } from "next/navigation";
 
 export default function Logo() {
   //getting states from Zustand
-  const { mouseOverEvent, mouseOutEvent, atHome, setAtHome } = Zustand();
+  const {
+    mouseOverEvent,
+    mouseOutEvent,
+    atHome,
+    setAtHome,
+    setScrollY,
+    scrollY,
+  } = Zustand();
 
   //manage atHome with Pathname
   const pathname = usePathname();
@@ -24,6 +31,29 @@ export default function Logo() {
       setAtHome(true);
     }, 50);
   };
+
+  // get scrollY
+  // const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (pathname == "/" && scrollY < 100) {
+      setAtHome(true);
+    } else {
+      setAtHome(false);
+    }
+  }, [scrollY]);
+
   return (
     <div>
       <Link
@@ -34,9 +64,10 @@ export default function Logo() {
         onMouseOver={mouseOverEvent}
       ></Link>
       <div
-        className="logo"
+        className={`logo ${atHome ? "atHome" : null}`}
         onMouseOut={mouseOutEvent}
         onMouseOver={mouseOverEvent}
+        // style={{ transform: `scale(${Math.max(1, 5 - scrollY / 50)})` }}
       >
         <img
           src="logos/Logo1.svg"

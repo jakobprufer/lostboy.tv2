@@ -20,6 +20,8 @@ interface ZustandInterface {
   setAtHome: (atHome: boolean) => void;
   hamburgerOpen: boolean;
   setHamburgerOpen: Dispatch<SetStateAction<boolean>>;
+  scrollY: number;
+  setScrollY: (scrollY: number) => void;
 }
 
 export const Zustand = create<ZustandInterface>()((set) => ({
@@ -37,4 +39,6 @@ export const Zustand = create<ZustandInterface>()((set) => ({
       hamburgerOpen:
         typeof value === "function" ? value(state.hamburgerOpen) : value,
     })),
+  scrollY: 0,
+  setScrollY: (scrollY: number) => set({ scrollY }),
 }));

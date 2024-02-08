@@ -93,13 +93,18 @@
 
 .logo
     white-space: nowrap
-    transition: $transition-logo
+    // transition: $transition-logo
     position: fixed
     font-size: 48pt
     color: $font
     user-select: none
     z-index: 7
     top: 48px
+    // transform-origin: top left
+
+    &.atHome
+        // transform: scale(0.8)
+        // top: 38px
 
     @media screen and ( max-width: $logoBreakpoint2 )
         top: 32px
@@ -110,7 +115,7 @@
     width: 111px
     transition: $transition-logo
     user-select: none
-    // top: 16px
+    top: 0
 
 .logo1.atHome
     width: 650px

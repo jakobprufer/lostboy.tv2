@@ -1,5 +1,6 @@
 import WorkGrid from "./Components/WorkGrid";
 import { getProjects } from "./Client";
+import HomeContent from "./Components/HomeContent";
 
 export default async function Home() {
   //get data
@@ -7,6 +8,7 @@ export default async function Home() {
 
   return (
     <main className="pageContent">
+      <HomeContent />
       <WorkGrid projects={projects} />
     </main>
   );
