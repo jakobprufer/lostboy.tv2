@@ -67,7 +67,7 @@ export default function HomeContent() {
                 bespoke sonic worlds through
               </motion.div>
               <motion.div variants={childVariants} className="missionChild">
-                music search, original composition,
+                original composition, music search,
               </motion.div>
               <motion.div variants={childVariants} className="missionChild">
                 sound design and voice over.
