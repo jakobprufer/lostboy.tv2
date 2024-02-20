@@ -1,0 +1,198 @@
+.logoClickableArea
+    width: 220px
+    z-index: 10
+    height: 75px
+    position: fixed
+    top: 48px
+    // pointer-events: auto
+
+.logo
+    white-space: nowrap
+    // transition: $transition-logo
+    position: fixed
+    font-size: 48pt
+    color: $font
+    user-select: none
+    z-index: 7
+    top: 48px
+    color: $invert
+    filter: invert(0)
+    mix-blend-mode: difference
+    // transform-origin: top left
+
+    &.atHome
+        // transform: scale(0.8)
+        // top: 38px
+
+    @media screen and ( max-width: $logoBreakpoint2 )
+        top: 32px
+
+// .logo1
+//     position: relative
+//     display: block
+//     width: 111px
+//     transition: $transition-logo
+//     user-select: none
+//     top: 0
+
+.logo1
+    position: relative
+    display: block
+    width: 111px
+    transition: $transition-logo
+    user-select: none
+    top: 0
+
+.logo1.atHome
+    width: 500px
+    top: 10px
+
+.logo2.atHome
+    width: 500px
+    top: -148px
+    left: 131px
+
+@media (max-width: 1150px)
+    .logo1.atHome
+        width: 400px
+
+    .logo2.atHome
+        top: -115px
+        left: 105px
+        width: 400px
+
+@media (max-width: $logoBreakpoint1)
+    .logo1.atHome
+        width: 300px
+
+    .logo2.atHome
+        top: -83px
+        left: 79px
+        width: 300px
+
+// @media (max-height: 820px)
+//     .logo1.atHome
+//         width: 435px
+
+//     .logo2.atHome
+//         top: -125px
+//         left: 115px
+//         width: 435px
+
+@media (max-width: $logoBreakpoint2)
+    .logo1.atHome
+        width: 218px
+
+    .logo2.atHome
+        top: -58px
+        left: 57px
+        width: 218px
+
+.logo2
+    position: relative
+    display: block
+    width: 111px
+    transition: $transition-logo
+    user-select: none
+    // top: 16px
+    left: 112px
+    top: -70px
+
+    // @media (pointer:none), (pointer:coarse)
+    //     left: 130px
+
+//original logo scaling
+// .logoClickableArea
+//     width: 220px
+//     z-index: 10
+//     height: 75px
+//     position: fixed
+//     top: 48px
+//     // pointer-events: auto
+
+// .logo
+//     white-space: nowrap
+//     // transition: $transition-logo
+//     position: fixed
+//     font-size: 48pt
+//     color: $font
+//     user-select: none
+//     z-index: 7
+//     top: 48px
+//     color: $invert
+//     filter: invert(0)
+//     mix-blend-mode: difference
+//     // transform-origin: top left
+
+//     &.atHome
+//         // transform: scale(0.8)
+//         // top: 38px
+
+//     @media screen and ( max-width: $logoBreakpoint2 )
+//         top: 32px
+
+// .logo1
+//     position: relative
+//     display: block
+//     width: 111px
+//     transition: $transition-logo
+//     user-select: none
+//     top: 0
+
+// .logo1.atHome
+//     width: 650px
+//     top: 10px
+
+// @media (max-width: $logoBreakpoint1)
+//     .logo1.atHome
+//         width: 435px
+
+// @media (max-height: 820px)
+//     .logo1.atHome
+//         width: 435px
+
+// @media (max-width: $logoBreakpoint2)
+//     .logo1.atHome
+//         width: 218px
+
+// // @media (pointer:none), (pointer:coarse)
+// //     .logo1.atHome
+// //         width: 218px
+
+// .logo2
+//     position: relative
+//     display: block
+//     width: 111px
+//     transition: $transition-logo
+//     user-select: none
+//     // top: 16px
+//     left: 112px
+//     top: -70px
+
+//     // @media (pointer:none), (pointer:coarse)
+//     //     left: 130px
+
+// .logo2.atHome
+//     width: 650px
+//     // top: 195px if you want to logo aligned with the navItems
+//     top: -190px
+//     left: 170px
+//     // pointer-events: none
+
+// @media (max-width: $logoBreakpoint1)
+//     .logo2.atHome
+//         top: -125px
+//         left: 115px
+//         width: 435px
+
+// @media (max-height: 820px)
+//     .logo2.atHome
+//         top: -125px
+//         left: 115px
+//         width: 435px
+
+// @media (max-width: $logoBreakpoint2)
+//     .logo2.atHome
+//         top: -58px
+//         left: 57px
+//         width: 218px

@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Project } from "../types/Project";
 import { Zustand } from "../Zustand/Zustand";
 import { AnimatePresence, motion } from "framer-motion";
@@ -14,18 +14,17 @@ type WorkGridProps = {
 // Use the WorkGridProps type to type the function component's props
 export default function WorkGrid({ projects }: WorkGridProps) {
   //getting states from Zustand
-  const { atHome, mouseOverEvent, mouseOutEvent } = Zustand();
+  const { atHome, mouseOverEvent, mouseOutEvent, modalOpen, setModalOpen } =
+    Zustand();
 
   const [selectedVideo, setSelectedVideo] = useState("");
-  const [modalOpen, setModalOpen] = useState(false);
+  // const [modalOpen, setModalOpen] = useState(false);
 
   //  video modal
   const openModal = (slug: string) => {
     setSelectedVideo(slug);
     setModalOpen(true);
   };
-
-  console.log(projects);
 
   return (
     <AnimatePresence>
@@ -57,21 +56,23 @@ export default function WorkGrid({ projects }: WorkGridProps) {
                 />
               </div>
               <div className="smallH mts stardom">{project.client}</div>
-              <div className="xsmallText">
+              <div className="gridTitle">
                 {project.title}
                 {project.agency && ` (${project.agency})`}
               </div>
             </div>
           ))}
         </div>
-        {modalOpen && (
-          <VideoModal
-            setModalOpen={setModalOpen}
-            selectedVideo={selectedVideo}
-            projects={projects}
-            modalOpen={modalOpen}
-          />
-        )}
+        <AnimatePresence>
+          {modalOpen && (
+            <VideoModal
+              setModalOpen={setModalOpen}
+              selectedVideo={selectedVideo}
+              projects={projects}
+              modalOpen={modalOpen}
+            />
+          )}
+        </AnimatePresence>
       </motion.div>
     </AnimatePresence>
   );

@@ -1,11 +1,33 @@
-.missionCont
+.homeContentFixer
     width: $pageWidth
     margin: auto
-    display: flex
-    justify-content: flex-end
-    padding-right: 5vw
-    padding-top: 25vh
     position: fixed
+    top: 360px
+
+    @media screen and (max-height: 820px)
+        top: 300px
+
+    @media (max-width: $logoBreakpoint1)
+        top: 420px
+
+    @media (max-width: $logoBreakpoint2)
+        top: 300px
+
+.missionCont
+    width: calc(100% - 700px)
+    display: flex
+    justify-content: center
+    align-items: flex-end
+    margin-left: auto
+
+    @media (max-width: 1150px)
+        width: calc(100% - 500px)
+
+    @media (max-width: $logoBreakpoint1)
+        width: calc(70%)
+
+    @media (max-width: $logoBreakpoint2)
+        width: 100%
 
 .mission
     position: relative
@@ -15,8 +37,8 @@
     position: absolute
     left: 0
     bottom: 0
-    height: 1px
-    transform: scaleX(0.82)
+    height: 2px
+    transform: scaleX(0.83)
     transform-origin: left
     // background: $fonttrans
     background: $action

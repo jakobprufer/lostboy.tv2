@@ -32,12 +32,14 @@
     justify-content: center
     align-items: center
     user-select: none
-    background: #92929222
+    // background: #92929222
+    background: $glass
     height: 5vw
     border-radius: 5px
+    // backdrop-filter: blur(10px)
 
     &:hover
-        opacity: 90%
+        background: $glassHover
 
     &:active
         filter: drop-shadow(2px 2px 8px #0000005e)
@@ -54,6 +56,13 @@
     gap: 16px
     justify-content: space-between
     flex-wrap: wrap
+    background: $glass
+    height: 64px
+    border-radius: 5px
+    align-items: center
+    // backdrop-filter: blur(10px)
+    margin: 0 8px
+    padding: 0 16px 0 8px
 
 .captionAreaOuter
     overflow: hidden
@@ -94,7 +103,7 @@
     cursor: pointer
     flex-shrink: 0
     user-select: none
-    background: #92929222
+    background: $glass
 
     &:hover
         opacity: 90%
@@ -105,14 +114,14 @@
     @media screen and (min-width: $logoBreakpoint2)
         display: none
 
-.quoteButton
-    cursor: pointer
-    background: $font
-    margin-right: 8px
-    color: $background
-    font-weight: 600
-    padding: 8px 24px
-    border-radius: 5px
+// .quoteButton
+//     cursor: pointer
+//     background: $font
+//     margin-right: 8px
+//     color: $background
+//     font-weight: 600
+//     padding: 8px 24px
+//     border-radius: 5px
 
     // @media screen and ( max-width: $logoBreakpoint2 )
     //     margin: 0 auto

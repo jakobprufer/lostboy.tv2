@@ -1,27 +1,61 @@
 html
     color: $font
 body
-    font-size: 16pt
-    font-weight: 500
+    font-size: 18px
+    font-weight: 300
     font-family: 'Manrope', sans-serif
 
+.smallTitle
+    text-transform: uppercase
+    font-weight: 300
+    letter-spacing: 1px
+
+.darker
+    color: $fonttrans
+
+.medText
+    font-size: 24px
+    line-height: 1.6
+    background: #101010ac
+
+h1
+    font-size: 48pt
+    font-weight: 400
+    color: $font
+    margin-bottom: 24px
+
+h3
+    font-weight: 600
+    margin-bottom: 8px
+
+.tagline
+    font-size: 28px
+    font-weight: 300
+    line-height: 160%
+    // color: $fonttrans
+    // background-color: #10100eb7
+
+    @media (max-width: $logoBreakpoint2)
+        font-size: 5vw
+
+//OLD
 @media screen and (min-width: $logoBreakpoint1)
     .responsiveBreak
         display: none
 
-.medText
-    font-size: 18pt
-    line-height: 24pt
-    font-weight: 400
-    background-color: #10100eb7
-    // box-shadow: 0 0 8px 8px $background inset
+// .medText
+//     font-size: 18px
+//     line-height: 24pt
+//     font-weight: 400
+//     background-color: #10100eb7
+//     // box-shadow: 0 0 8px 8px $background inset
 
-    @media (max-width: $logoBreakpoint2)
-        font-size: 16pt
-        line-height: 22pt
+//     @media (max-width: $logoBreakpoint2)
+//         font-size: 16pt
+//         line-height: 22pt
 
 .smallText
-    font-size: 18pt
+    font-size: 18px
     line-height: 20pt
     font-weight: 400
 
@@ -35,7 +69,7 @@ body
     font-weight: 300
 
 p
-    margin-bottom: 24px
+    margin-bottom: 32px
 
 .smallH
     font-weight: 600
@@ -86,8 +120,3 @@ p
 .largeText
     font-weight: 500
     font-size: 32pt
-
-.tagline
-    font-size: 28px
-    font-weight: 400
-    line-height: 160%

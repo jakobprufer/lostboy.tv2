@@ -42,13 +42,13 @@ const childVariants = {
 
 export default function HomeContent() {
   //getting states from Zustand
-  const { scrollY } = Zustand();
+  const { scrollY, atHome } = Zustand();
 
   return (
-    <div>
+    <div className="homeContentFixer">
       <div className="missionCont">
         <AnimatePresence>
-          {scrollY < 100 && (
+          {atHome && (
             <motion.div
               className="mission tagline"
               variants={containerVariants}

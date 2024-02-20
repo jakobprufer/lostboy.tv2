@@ -13,6 +13,8 @@ export default function Logo() {
     setAtHome,
     setScrollY,
     scrollY,
+    modalOpen,
+    setModalOpen,
   } = Zustand();
 
   //manage atHome with Pathname
@@ -29,12 +31,11 @@ export default function Logo() {
   const logoClick = () => {
     setTimeout(() => {
       setAtHome(true);
+      setModalOpen(false);
     }, 50);
   };
 
   // get scrollY
-  // const [scrollY, setScrollY] = useState(0);
-
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
@@ -47,12 +48,16 @@ export default function Logo() {
   }, []);
 
   useEffect(() => {
-    if (pathname == "/" && scrollY < 100) {
-      setAtHome(true);
+    if (modalOpen == false) {
+      if (pathname == "/" && scrollY < 100) {
+        setAtHome(true);
+      } else {
+        setAtHome(false);
+      }
     } else {
       setAtHome(false);
     }
-  }, [scrollY]);
+  }, [scrollY, modalOpen]);
 
   return (
     <div>

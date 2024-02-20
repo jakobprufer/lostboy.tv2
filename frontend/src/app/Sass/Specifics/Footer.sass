@@ -1,18 +1,102 @@
 .footer
-    margin: 64px 0 32px 0
+    margin: auto 0 64px 0
+    height: 180px
     display: flex
     justify-content: space-between
-    align-items: flex-end
-    position: absolute
-    bottom: 0
-    right: 0
-    left: 0
-    color: $fonttrans
-    transition: 0.2s
+    // font-size: 12pt
+    background: $glass
+    padding: 32px
+    border-radius: 5px
+    backdrop-filter: blur(2px)
 
-    @media screen and ( max-width: $logoBreakpoint2 )
+    @media screen and (max-width: $logoBreakpoint1)
+        height: fit-content
         flex-direction: column
+        gap: 32px
 
-// .atHomeText
-//     color: $font
-//     transition: 0.2s
+.footerLeft, footerRight
+    height: 100%
+
+.footerLeft
+    display: flex
+    justify-content: space-between
+    gap: 6vw
+
+    @media screen and (max-width: $logoBreakpoint1)
+        flex-direction: column
+        gap: 16px
+
+.footerLogo
+    height: 100%
+    padding: 16px
+
+    @media screen and (max-width: $logoBreakpoint1)
+        display: none
+
+.footerGroup
+    display: flex
+    flex-direction: column
+    height: 100%
+    justify-content: space-between
+    gap: 8px
+
+.sitemap
+    @media screen and (max-width: 1400px)
+        display: none
+
+.footerAction
+    @media screen and (max-width: $logoBreakpoint1)
+        // display: none
+
+.footerList
+    font-weight: 300
+    line-height: 1.6
+    color: $fonttrans
+    white-space: nowrap
+
+    a
+        display: block
+        color: $fonttrans
+
+    a:hover
+        // text-decoration: underline
+
+.footerPrompt
+    max-width: 300px
+    font-weight: 300
+    line-height: 1.2
+    color: $fonttrans
+
+.footerImprint
+    height: 100%
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+    line-height: 1.4
+    text-align: right
+    font-weight: 300
+    width: fit-content
+
+    @media screen and (max-width: $logoBreakpoint1)
+        text-align: left
+
+.button
+    padding: 8px 16px
+    background: #2a2a2a
+    background: $action
+    // color: $invert
+    width: fit-content
+    border-radius: 5px
+
+.prufer
+    color: $fonttrans
+
+    a
+        color: $fonttrans
+
+.responsiveBr
+    @media screen and (min-width: 1200px)
+        display: none
+
+    @media screen and (max-width: $logoBreakpoint1)
+        display: none

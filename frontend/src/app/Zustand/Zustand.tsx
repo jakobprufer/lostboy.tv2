@@ -18,6 +18,8 @@ interface ZustandInterface {
   setMouseOverEvent: (mouseOverEvent: MouseEventHandler<HTMLElement>) => void;
   atHome: boolean;
   setAtHome: (atHome: boolean) => void;
+  modalOpen: boolean;
+  setModalOpen: Dispatch<SetStateAction<boolean>>;
   hamburgerOpen: boolean;
   setHamburgerOpen: Dispatch<SetStateAction<boolean>>;
   scrollY: number;
@@ -33,6 +35,11 @@ export const Zustand = create<ZustandInterface>()((set) => ({
     set({ mouseOverEvent }),
   atHome: false,
   setAtHome: (atHome: boolean) => set({ atHome }),
+  modalOpen: false,
+  setModalOpen: (value: SetStateAction<boolean>) =>
+    set((state) => ({
+      modalOpen: typeof value === "function" ? value(state.modalOpen) : value,
+    })),
   hamburgerOpen: false,
   setHamburgerOpen: (value: SetStateAction<boolean>) =>
     set((state) => ({

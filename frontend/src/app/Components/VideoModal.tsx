@@ -17,11 +17,11 @@ type VideoModalProps = {
 const transition = { duration: 0.6, ease: [0.43, 0.12, 0.23, 0.96] };
 
 let variants = {
-  enter: ({ direction, width }) => ({
+  enter: ({ direction, width }: { direction: number; width: number }) => ({
     x: direction * width,
   }),
   center: { x: 0 },
-  exit: ({ direction, width }) => ({
+  exit: ({ direction, width }: { direction: number; width: number }) => ({
     x: direction * -width,
   }),
 };
@@ -60,7 +60,7 @@ export default function VideoModal({
       ? -1
       : previous == length - 1 && current == 0
       ? 1
-      : current > previous
+      : previous != null && current > previous
       ? 1
       : -1;
 
@@ -75,7 +75,7 @@ export default function VideoModal({
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ duration: 0.3 }}
+        transition={{ duration: 0.2 }}
       >
         <div className="slideOuter">
           <div className="slideNavMobileCont">
@@ -114,7 +114,14 @@ export default function VideoModal({
               className="slideContentOuter"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className={`slideContent c169`} ref={ref}>
+              <motion.div
+                className={`slideContent c169`}
+                ref={ref}
+                initial={{ scale: 0.95 }}
+                animate={{ scale: 1 }}
+                exit={{ scale: 0.95 }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
+              >
                 <AnimatePresence custom={{ direction, width }}>
                   <motion.div
                     key={current}
@@ -141,7 +148,7 @@ export default function VideoModal({
                     </video>
                   </motion.div>
                 </AnimatePresence>
-              </div>
+              </motion.div>
             </div>
             <div
               className="slideNav"
@@ -157,15 +164,20 @@ export default function VideoModal({
           </div>
           <div className="captionAreaOuter">
             <motion.div className="captionArea">
-              <div className="smallText mlxs">
-                <span className="smallH ">{projects[current].client}</span> -{" "}
+              <div className="mlxs">
+                <span className="smallH stardom prs">
+                  {projects[current].client}
+                </span>
+                {""}
                 {projects[current].title}
-                {projects[current].agency && ` (${projects[current].agency})`}
+                {projects[current].agency && ` - ${projects[current].agency}`}
               </div>
               {projects[current].available ? (
                 <a
-                  className="quoteButton"
+                  className="quoteButton button"
                   href={`mailto:luca@lostboy.tv?subject=Enquiry about ${projects[current].title}`}
+                  onMouseOver={mouseOverEvent}
+                  onMouseOut={mouseOutEvent}
                 >
                   Get a quote
                 </a>

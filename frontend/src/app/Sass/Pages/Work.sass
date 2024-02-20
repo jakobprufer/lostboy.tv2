@@ -1,10 +1,13 @@
 .workGrid
     position: relative
-    top: 30vh
+    padding-top: 30vh
     transition: $transition-logo
 
     &.atHome
-        top: 70vh
+        padding-top: 65vh
+
+        @media (max-width: $logoBreakpoint2)
+            padding-top: 45vh
 
 .workSlide
     max-width: 140vh
@@ -38,6 +41,9 @@
     transform: scale(1.03)
     transition: 0.4s
 
+.gridTitle
+    margin-top: 4px
+
 // to get video modal above header
 // .modalOuter
 //     position: relative
@@ -45,7 +51,7 @@
 
 .modal
     position: fixed
-    z-index: 20
+    z-index: 6
     top: 0
     left: 0
     width: 100%
@@ -53,7 +59,8 @@
     // display: flex
     // align-items: center
     // justify-content: center
-    background-color: rgba(0, 0, 0, 0.85)
+    background-color: rgba(0, 0, 0, 0.789)
+    backdrop-filter: blur(5px)
     display: flex
     flex-direction: column
     justify-content: center

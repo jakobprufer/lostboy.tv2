@@ -6,3 +6,7 @@ body {
 .stardom {
   font-family: var(--font-stardom), serif;
 }
+
+.freehand {
+  font-family: var(--font-freehand), serif;
+}
