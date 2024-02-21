@@ -8,7 +8,7 @@ export default async function Home() {
 
   return (
     <main className="pageContent">
-      <HomeContent />
+      {/* <HomeContent /> */}
       <WorkGrid projects={projects} />
     </main>
   );
