@@ -1,0 +1,79 @@
+import {defineField, defineType} from 'sanity'
+import {ProjectsIcon} from '@sanity/icons'
+
+export default defineType({
+  name: 'project',
+  title: 'Featured Work',
+  type: 'document',
+  icon: ProjectsIcon,
+  fields: [
+    defineField({
+      name: 'orderRank',
+      title: 'Order Rank',
+      type: 'string',
+      hidden: true,
+    }),
+    defineField({
+      name: 'visible',
+      title: 'Should this project be visible?',
+      type: 'boolean',
+    }),
+    defineField({
+      name: 'available',
+      title: 'Is this project currently available for licensing?',
+      type: 'boolean',
+    }),
+    defineField({
+      name: 'client',
+      title: 'Client',
+      type: 'string',
+    }),
+    defineField({
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'client',
+        maxLength: 96,
+      },
+    }),
+    defineField({
+      name: 'title',
+      title: 'Title',
+      type: 'string',
+    }),
+    defineField({
+      name: 'agency',
+      title: 'Agency (optional)',
+      type: 'string',
+    }),
+    defineField({
+      name: 'video',
+      title: 'Video',
+      type: 'file',
+    }),
+    defineField({
+      name: 'thumbnail',
+      title: 'Thumbnail',
+      type: 'image',
+    }),
+    defineField({
+      name: 'publishedAt',
+      title: 'Published at',
+      type: 'datetime',
+    }),
+  ],
+
+  preview: {
+    select: {
+      title: 'title',
+      subtitle: 'client',
+      author: 'author.name',
+      media: 'thumbnail',
+    },
+    prepare(selection) {
+      const {author} = selection
+      return {...selection, subtitle: author && `by ${author}`}
+    },
+  },
+})

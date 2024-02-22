@@ -1,0 +1,85 @@
+.logoClickableArea
+    width: 220px
+    z-index: 10
+    height: 75px
+    position: fixed
+    top: 48px
+
+.logo
+    white-space: nowrap
+    position: fixed
+    font-size: 48pt
+    color: $font
+    user-select: none
+    z-index: 7
+    top: 48px
+    color: $invert
+    filter: invert(0)
+    mix-blend-mode: difference
+
+    &.atHome
+    @media screen and ( max-width: $logoBreakpoint2 )
+        top: 32px
+
+.logo1
+    position: relative
+    display: block
+    width: 111px
+    transition: $transition-logo
+    user-select: none
+    top: 0
+
+.logo1.atHome
+    width: 600px
+    top: 10px
+
+.logo2.atHome
+    width: 600px
+    top: -175px
+    left: 157px
+
+// @media (max-width: 1150px)
+//     .logo1.atHome
+//         width: 400px
+
+//     .logo2.atHome
+//         top: -115px
+//         left: 105px
+//         width: 400px
+
+@media (max-width: $logoBreakpoint1)
+    .logo1.atHome
+        width: 435px
+
+    .logo2.atHome
+        top: -125px
+        left: 115px
+        width: 435px
+
+@media (max-height: 820px)
+    .logo1.atHome
+        width: 435px
+
+    .logo2.atHome
+        top: -125px
+        left: 115px
+        width: 435px
+
+@media (max-width: $logoBreakpoint2)
+    .logo1.atHome
+        width: 218px
+
+    .logo2.atHome
+        top: -58px
+        left: 57px
+        width: 218px
+
+.logo2
+    position: relative
+    display: block
+    width: 111px
+    transition: $transition-logo
+    user-select: none
+    // top: 16px
+    left: 112px
+    top: -70px
