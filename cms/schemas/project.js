@@ -14,24 +14,22 @@ export default defineType({
       hidden: true,
     }),
     defineField({
-      name: 'visible',
-      title: 'Should this project be visible?',
-      type: 'boolean',
-    }),
-    defineField({
       name: 'available',
       title: 'Is this project currently available for licensing?',
       type: 'boolean',
+      validation: Rule => Rule.required(),
     }),
     defineField({
       name: 'client',
       title: 'Client',
+      validation: Rule => Rule.required(),
       type: 'string',
     }),
     defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
+      validation: Rule => Rule.required(),
       options: {
         source: 'client',
         maxLength: 96,
@@ -41,6 +39,7 @@ export default defineType({
       name: 'title',
       title: 'Title',
       type: 'string',
+      validation: Rule => Rule.required(),
     }),
     defineField({
       name: 'agency',
@@ -51,11 +50,13 @@ export default defineType({
       name: 'video',
       title: 'Video',
       type: 'file',
+      validation: Rule => Rule.required(),
     }),
     defineField({
       name: 'thumbnail',
       title: 'Thumbnail',
       type: 'image',
+      validation: Rule => Rule.required(),
     }),
     defineField({
       name: 'publishedAt',

@@ -1,12 +1,12 @@
-"use client";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { Zustand } from "../Zustand/Zustand";
+import CaseCard from "../Components/CaseCard";
+import { getCaseStudies } from "../Client";
+import { CaseStudy } from "../types/CaseStudy";
 
-export default function About() {
-  //getting states from Zustand
-  const { mouseOverEvent, mouseOutEvent } = Zustand();
+export default async function About() {
+  const caseStudies = await getCaseStudies();
 
   return (
     <div className="pageContent about">
@@ -74,26 +74,9 @@ export default function About() {
       </div>
       <div className="caseColumn">
         <h1 className="stardom">how we work</h1>
-        <Link
-          className="caseCard"
-          href=""
-          onMouseOut={mouseOutEvent}
-          onMouseOver={mouseOverEvent}
-        >
-          <div className="cardText">
-            <h2 className="smallH stardom">Co-op</h2>
-            <div>The Gift of Community Spirit</div>
-            <div>MullenLowe</div>
-          </div>
-          <div className="cardImg">
-            <Image
-              src="/images/Co-op.jpg"
-              width={1280}
-              height={720}
-              alt="alt"
-            />
-          </div>
-        </Link>
+        {caseStudies.map((caseStudy: CaseStudy) => (
+          <CaseCard caseStudy={caseStudy} />
+        ))}
       </div>
     </div>
   );

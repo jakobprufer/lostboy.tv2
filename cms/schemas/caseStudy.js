@@ -11,22 +11,58 @@ export default defineType({
       name: 'title',
       title: 'Title',
       type: 'string',
+      validation: Rule => Rule.required(),
     }),
     defineField({
-      name: 'linkedProject',
-      title: 'Linked Project',
+      name: 'linkedWork',
+      title: 'Linked Work',
       type: 'reference',
+      validation: Rule => Rule.required(),
       to: [
-    {
-      type: 'project',
-      title: 'Project'
-    }
-  ]
+            {
+              type: 'project',
+              title: 'Work'
+            }
+          ]
     }),
     defineField({
-      name: 'description',
-      title: 'Description',
-      type: 'text',
+      name: 'icon',
+      title: 'Brand Icon (optional) - Follow format of the existing case studies.',
+      type: 'image',
+    }),
+    defineField({
+      name: 'content',
+      type: 'array',
+      title: 'Content',
+      validation: Rule => Rule.required(),
+      of: [
+        {
+          type: 'block',
+          styles: [
+            {title: 'Normal', value: 'normal'},
+            {title: 'Subheading', value: 'h2'},
+          ],
+          lists: [
+            {title: 'Bullet', value: 'bullet'},
+            {title: 'Numbered', value: 'number'}
+          ]
+        },
+        {
+          type: 'image'
+        },
+        {
+          type: 'file',
+          title: 'MP3 Audio',
+          accept: "audio/mp3",
+          fields: [
+            {
+              name: 'caption',
+              type: 'string',
+              title: 'Caption'
+            }
+          ]
+        }
+      ]
     }),
   ],
 })
