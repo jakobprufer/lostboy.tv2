@@ -1,5 +1,5 @@
 import WorkGrid from "./Components/WorkGrid";
-import { getProjects } from "./Client";
+import { getProjects } from "./SanityUtils";
 import HomeContent from "./Components/HomeContent";
 
 export default async function Home() {

@@ -145,6 +145,14 @@ export default function VideoModal({
                         src={`${projects[current].video}`}
                         type="video/mp4"
                       />
+                      <source
+                        src={`${projects[current].video}`}
+                        type="video/mov"
+                      />
+                      <source
+                        src={`${projects[current].video}`}
+                        type="video/ogg"
+                      />
                     </video>
                   </motion.div>
                 </AnimatePresence>

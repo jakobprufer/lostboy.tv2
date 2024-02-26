@@ -1,3 +1,5 @@
+import { PortableTextBlock } from "sanity";
+
 export type CaseStudy = {
   title: string;
   client: string;
@@ -5,4 +7,6 @@ export type CaseStudy = {
   thumbnail: string;
   icon: string;
   video: string;
+  slug: string;
+  content: PortableTextBlock[];
 };

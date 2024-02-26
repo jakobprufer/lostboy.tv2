@@ -1,4 +1,5 @@
 import { createClient, groq } from "next-sanity";
+import { CaseStudy } from "./types/CaseStudy";
 
 // Common Sanity client configuration
 const client = createClient({
@@ -8,7 +9,7 @@ const client = createClient({
   useCdn: false,
 });
 
-// Function to fetch projects
+// Fetch data
 export async function getProjects() {
   const query = groq`*[_type == "project"]|order(orderRank) {
     _id,
@@ -25,17 +26,32 @@ export async function getProjects() {
   return client.fetch(query);
 }
 
-// Function to fetch case studies, including details from the linked project
 export async function getCaseStudies() {
-  const query = groq`*[_type == "caseStudy"] {
+  const query = groq`*[_type == "caseStudy"]|order(_createdAt desc) {
     title,
     "icon": icon.asset->url,
     content,
     "client": linkedWork->client,
     "video": linkedWork->video.asset->url,
     "thumbnail": linkedWork->thumbnail.asset->url,
-    "agency": linkedWork->agency
+    "agency": linkedWork->agency,
+    "slug": linkedWork->slug.current
   }`;
 
   return client.fetch(query);
+}
+
+export async function getCaseStudy(slug: string): Promise<CaseStudy> {
+  const query = groq`*[_type == "caseStudy" && linkedWork->slug.current == $slug][0] {
+    title,
+    "slug": linkedWork->slug.current,
+    "icon": icon.asset->url,
+    content,
+    "client": linkedWork->client,
+    "video": linkedWork->video.asset->url,
+    "thumbnail": linkedWork->thumbnail.asset->url,
+    "agency": linkedWork->agency,
+  }`;
+
+  return client.fetch(query, { slug });
 }

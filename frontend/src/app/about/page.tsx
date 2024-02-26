@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import CaseCard from "../Components/CaseCard";
-import { getCaseStudies } from "../Client";
+import { getCaseStudies } from "../SanityUtils";
 import { CaseStudy } from "../types/CaseStudy";
 
 export default async function About() {
@@ -74,9 +74,11 @@ export default async function About() {
       </div>
       <div className="caseColumn">
         <h1 className="stardom">how we work</h1>
-        {caseStudies.map((caseStudy: CaseStudy) => (
-          <CaseCard caseStudy={caseStudy} />
-        ))}
+        <div className="caseCardCont">
+          {caseStudies.map((caseStudy: CaseStudy) => (
+            <CaseCard caseStudy={caseStudy} />
+          ))}
+        </div>
       </div>
     </div>
   );

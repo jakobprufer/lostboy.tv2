@@ -27,7 +27,7 @@ export default defineType({
     }),
     defineField({
       name: 'icon',
-      title: 'Brand Icon (optional) - Follow format of the existing case studies.',
+      title: 'Brand Icon (.png) - Optional. Follow format of the existing case studies.',
       type: 'image',
     }),
     defineField({
@@ -48,7 +48,18 @@ export default defineType({
           ]
         },
         {
-          type: 'image'
+          type: 'image',
+        fields: [
+          {
+            name: 'alt',
+            type: 'string',
+            title: 'Alternative text',
+            description: 'Important for SEO and accessiblity.',
+              options: {
+                isHighlighted: true,
+            },
+          },
+        ],
         },
         {
           type: 'file',

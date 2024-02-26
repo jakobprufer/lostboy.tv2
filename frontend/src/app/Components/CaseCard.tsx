@@ -16,7 +16,7 @@ export default function CaseCard({ caseStudy }: CaseCardProps) {
   return (
     <Link
       className="caseCard"
-      href=""
+      href={`/${caseStudy.slug}`}
       onMouseOut={mouseOutEvent}
       onMouseOver={mouseOverEvent}
     >

@@ -48,8 +48,9 @@ export default defineType({
     }),
     defineField({
       name: 'video',
-      title: 'Video',
+      title: 'Video (.mp4, .mov, .ogg)',
       type: 'file',
+      accept: ".mp4, .mov, .ogg",
       validation: Rule => Rule.required(),
     }),
     defineField({
