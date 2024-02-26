@@ -1,32 +1,54 @@
 import React from "react";
 import { getCaseStudy } from "../SanityUtils";
 import { PortableText } from "@portabletext/react";
+import urlBuilder from "@sanity/image-url";
+import { getImageDimensions } from "@sanity/asset-utils";
 import Image from "next/image";
-import { extractImageDimensions } from "../functional/extractImageDimensions";
+import { client } from "../SanityUtils";
 
 type DetailProps = {
   params: { slug: string };
 };
-
-interface ImageValue {
-  imageUrl: string;
+interface SanityImageValue {
+  _id: string;
+  asset: {
+    _ref: string;
+  };
+  alt?: string;
 }
 
-const myPortableTextComponents = {
+interface SanityImageProps {
+  value: SanityImageValue;
+}
+
+const SanityImage: React.FC<SanityImageProps> = ({ value }) => {
+  const { width, height } = getImageDimensions(value);
+
+  return (
+    <Image
+      src={urlBuilder(client).image(value).fit("max").auto("format").url()}
+      alt={value.alt || " "}
+      width={width}
+      height={height}
+      className="detailImg"
+      style={{
+        aspectRatio: width / height,
+      }}
+    />
+  );
+};
+
+const components = {
   types: {
-    image: ({ value }: { value: ImageValue }) => (
-      <img src={value.imageUrl} alt="" />
-    ),
+    image: SanityImage,
+    // Any other custom types you have in your content
+    // Examples: mapLocation, contactForm, code, featuredProjects, latestNews, etc.
   },
 };
 
 export default async function Detail({ params }: DetailProps) {
   const slug = params.slug;
   const caseStudy = await getCaseStudy(slug);
-
-  //extracting image dimensions
-  //   const dimensions = extractImageDimensions(caseStudy.icon);
-  // left out for now, used normal image tag instead of next/image
 
   return (
     <div className="pageContent detail">
@@ -59,10 +81,7 @@ export default async function Detail({ params }: DetailProps) {
           <source src={caseStudy.video} type="video/ogg" />
         </video>
         <div className="medText">
-          <PortableText
-            value={caseStudy.content}
-            components={myPortableTextComponents}
-          />
+          <PortableText value={caseStudy.content} components={components} />
         </div>
       </div>
     </div>

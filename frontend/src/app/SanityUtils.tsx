@@ -2,7 +2,7 @@ import { createClient, groq } from "next-sanity";
 import { CaseStudy } from "./types/CaseStudy";
 
 // Common Sanity client configuration
-const client = createClient({
+export const client = createClient({
   projectId: "vlugq6ei",
   dataset: "production",
   apiVersion: "2024-02-01",
