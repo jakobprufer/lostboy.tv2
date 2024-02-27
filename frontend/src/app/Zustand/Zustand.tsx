@@ -24,6 +24,8 @@ interface ZustandInterface {
   setHamburgerOpen: Dispatch<SetStateAction<boolean>>;
   scrollY: number;
   setScrollY: (scrollY: number) => void;
+  currentPlaying: string;
+  setCurrentPlaying: Dispatch<SetStateAction<string>>;
 }
 
 export const Zustand = create<ZustandInterface>()((set) => ({
@@ -48,4 +50,10 @@ export const Zustand = create<ZustandInterface>()((set) => ({
     })),
   scrollY: 0,
   setScrollY: (scrollY: number) => set({ scrollY }),
+  currentPlaying: "0",
+  setCurrentPlaying: (value: SetStateAction<string>) =>
+    set((state) => ({
+      currentPlaying:
+        typeof value === "function" ? value(state.currentPlaying) : value,
+    })),
 }));

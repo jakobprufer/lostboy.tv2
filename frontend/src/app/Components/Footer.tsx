@@ -81,7 +81,7 @@ export default function Footer() {
       </div>
       <div className="footerRight">
         <div className="footerImprint">
-          <div className="prufer">
+          {/* <div className="prufer">
             Website by{" "}
             <a
               href="https://prufer.co"
@@ -90,7 +90,7 @@ export default function Footer() {
             >
               prufer.co
             </a>
-          </div>
+          </div> */}
           <div>
             © {currentYear} Lost Boy <br className="responsiveBr" />
             Collective Ltd.

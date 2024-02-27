@@ -1,49 +1,9 @@
 import React from "react";
 import { getCaseStudy } from "../SanityUtils";
-import { PortableText } from "@portabletext/react";
-import urlBuilder from "@sanity/image-url";
-import { getImageDimensions } from "@sanity/asset-utils";
-import Image from "next/image";
-import { client } from "../SanityUtils";
+import CaseStudyContent from "../Components/CaseStudyContent";
 
 type DetailProps = {
   params: { slug: string };
-};
-interface SanityImageValue {
-  _id: string;
-  asset: {
-    _ref: string;
-  };
-  alt?: string;
-}
-
-interface SanityImageProps {
-  value: SanityImageValue;
-}
-
-const SanityImage: React.FC<SanityImageProps> = ({ value }) => {
-  const { width, height } = getImageDimensions(value);
-
-  return (
-    <Image
-      src={urlBuilder(client).image(value).fit("max").auto("format").url()}
-      alt={value.alt || " "}
-      width={width}
-      height={height}
-      className="detailImg"
-      style={{
-        aspectRatio: width / height,
-      }}
-    />
-  );
-};
-
-const components = {
-  types: {
-    image: SanityImage,
-    // Any other custom types you have in your content
-    // Examples: mapLocation, contactForm, code, featuredProjects, latestNews, etc.
-  },
 };
 
 export default async function Detail({ params }: DetailProps) {
@@ -80,9 +40,7 @@ export default async function Detail({ params }: DetailProps) {
           <source src={caseStudy.video} type="video/mov" />
           <source src={caseStudy.video} type="video/ogg" />
         </video>
-        <div className="medText">
-          <PortableText value={caseStudy.content} components={components} />
-        </div>
+        <CaseStudyContent caseStudy={caseStudy} />
       </div>
     </div>
   );

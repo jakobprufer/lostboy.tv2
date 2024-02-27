@@ -64,7 +64,7 @@ export default defineType({
         {
           type: 'file',
           title: 'MP3 Audio',
-          accept: "audio/mp3",
+          accept: ".mp3",
           fields: [
             {
               name: 'caption',
