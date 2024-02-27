@@ -27,3 +27,23 @@
 
 .contactText
     padding-top: 16px
+
+.contactDetails
+    display: flex
+    flex-direction: column
+    gap: 8px
+
+    a
+        border-bottom: 1px solid $font
+        width: fit-content
+
+    .contactButton
+        display: inline-block
+        background: $glass
+        font-size: 18px
+        margin-left: 16px
+        padding: 2px 8px
+        border-radius: 5px
+
+        &:hover
+            background: $glassHover
