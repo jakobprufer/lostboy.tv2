@@ -48,14 +48,14 @@ export default defineType({
     }),
     defineField({
       name: 'video',
-      title: 'Video (.mp4, .mov, .ogg)',
+      title: 'Video (.mp4, .mov, .ogg - max 20 MB)',
       type: 'file',
       accept: ".mp4, .mov, .ogg",
       validation: Rule => Rule.required(),
     }),
     defineField({
       name: 'thumbnail',
-      title: 'Thumbnail',
+      title: 'Thumbnail (max 0.5 MB)',
       type: 'image',
       validation: Rule => Rule.required(),
     }),

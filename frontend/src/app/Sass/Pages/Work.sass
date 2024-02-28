@@ -3,11 +3,15 @@
     padding-top: 30vh
     transition: $transition-logo
 
+    @media screen and (max-width: $logoBreakpoint2)
+        padding-top: 10vh
+
     &.atHome
         padding-top: 65vh
 
         @media (max-width: $logoBreakpoint2)
-            padding-top: 45vh
+            // padding-top: 45vh - change back if text is added
+            padding-top: 20vh
 
 .workSlide
     max-width: 140vh
