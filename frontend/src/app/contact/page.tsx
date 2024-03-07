@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { Zustand } from "../Zustand/Zustand";
+import { RiFileCopyLine } from "react-icons/ri";
 
 export default function Contact() {
   //getting states from Zustand
@@ -25,7 +26,7 @@ export default function Contact() {
             onMouseOut={mouseOutEvent}
             onMouseOver={mouseOverEvent}
           >
-            Copy
+            <RiFileCopyLine />
           </div>
         </div>
         <div>
@@ -42,7 +43,7 @@ export default function Contact() {
             onMouseOut={mouseOutEvent}
             onMouseOver={mouseOverEvent}
           >
-            Copy
+            <RiFileCopyLine /> Copy
           </div>
         </div>
       </div>
