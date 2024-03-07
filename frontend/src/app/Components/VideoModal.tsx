@@ -172,13 +172,15 @@ export default function VideoModal({
           </div>
           <div className="captionAreaOuter">
             <motion.div className="captionArea">
-              <div className="mlxs">
-                <span className="smallH stardom prs">
+              <div className="captionLeft mlxs">
+                <div className="smallH stardom prs captionClient">
                   {projects[current].client}
-                </span>
+                </div>
                 {""}
-                {projects[current].title}
-                {projects[current].agency && ` - ${projects[current].agency}`}
+                <div className="captionInfo">
+                  {projects[current].title}
+                  {projects[current].agency && ` - ${projects[current].agency}`}
+                </div>
               </div>
               {projects[current].available ? (
                 <a

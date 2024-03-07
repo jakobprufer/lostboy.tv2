@@ -13,7 +13,7 @@
     margin: calc(10vw - 100px) auto 0 auto
 
     @media (max-width: $logoBreakpoint1)
-        max-width: calc(100% - 10vw)
+        width: calc(100% - 10vw)
         margin: 0 auto 0 auto
 
 .slideContentOuter
@@ -57,12 +57,12 @@
     justify-content: space-between
     flex-wrap: wrap
     background: $glass
-    height: 64px
+    min-height: 64px
     border-radius: 5px
     align-items: center
     // backdrop-filter: blur(10px)
     margin: 0 8px
-    padding: 0 16px 0 8px
+    padding: 16px 16px 16px 8px
 
 .captionAreaOuter
     overflow: hidden
@@ -71,6 +71,20 @@
 
     @media screen and (max-width: $logoBreakpoint2)
         margin: 0
+
+.captionLeft
+    display: flex
+    align-items: baseline
+
+    @media screen and (max-width: $logoBreakpoint2)
+        flex-direction: column
+        gap: 4px
+
+// .captionClient
+//     background: red
+
+// .captionInfo
+//     background: red
 
 .slideTitle
     font-size: 40pt
