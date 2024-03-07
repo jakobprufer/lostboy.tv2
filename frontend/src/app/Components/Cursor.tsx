@@ -3,15 +3,14 @@ import React, { useRef, useEffect } from "react";
 import { Zustand } from "../Zustand/Zustand";
 
 export default function Cursor() {
-  const delay = 18;
-
   const dot = useRef<HTMLDivElement>(null);
 
   const cursorVisible = useRef(true);
   const cursorEnlarged = useRef(false);
 
-  const endX = useRef(window.innerWidth / 2);
-  const endY = useRef(window.innerHeight / 2);
+  const endX = useRef(0);
+  const endY = useRef(0);
+
   const _x = useRef(0);
   const _y = useRef(0);
 
@@ -87,17 +86,24 @@ export default function Cursor() {
 
   let scrollY = 0;
 
-  function setScrollY() {
-    scrollY = window.scrollY;
+  useEffect(() => {
+    function setScrollY() {
+      scrollY = window.scrollY;
 
-    // You can perform additional actions based on the distance here
-  }
+      // You can perform additional actions based on the distance here
+    }
 
-  // Attach the function to the scroll event
-  window.addEventListener("scroll", setScrollY);
+    // Attach the function to the scroll event
+    window.addEventListener("scroll", setScrollY);
 
-  // Initial call to set the initial distance
-  setScrollY();
+    // Initial call to set the initial distance
+    setScrollY();
+
+    return () => {
+      // Clean up the event listener when the component unmounts
+      window.removeEventListener("scroll", setScrollY);
+    };
+  }, []);
 
   const mouseMoveEvent = (e: MouseEvent) => {
     cursorVisible.current = true;

@@ -47,6 +47,7 @@ function useAudio({
   return [
     <audio
       src={source}
+      key={source}
       hidden
       ref={audioRef}
       onLoadedData={() => {

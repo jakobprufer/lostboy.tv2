@@ -26,7 +26,7 @@ export default function Contact() {
             onMouseOut={mouseOutEvent}
             onMouseOver={mouseOverEvent}
           >
-            <RiFileCopyLine />
+            <RiFileCopyLine className="riIconInline" />
           </div>
         </div>
         <div>
@@ -43,7 +43,7 @@ export default function Contact() {
             onMouseOut={mouseOutEvent}
             onMouseOver={mouseOverEvent}
           >
-            <RiFileCopyLine /> Copy
+            <RiFileCopyLine className="riIconInline" />
           </div>
         </div>
       </div>

@@ -75,7 +75,7 @@ export default function Footer() {
             onMouseOut={mouseOutEvent}
             onMouseOver={mouseOverEvent}
           >
-            Let's work
+            Let&apos;s work
           </a>
         </div>
       </div>

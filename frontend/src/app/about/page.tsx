@@ -76,7 +76,7 @@ export default async function About() {
         <h1 className="stardom">how we work</h1>
         <div className="caseCardCont">
           {caseStudies.map((caseStudy: CaseStudy) => (
-            <CaseCard caseStudy={caseStudy} />
+            <CaseCard key={caseStudy.title} caseStudy={caseStudy} />
           ))}
         </div>
       </div>
