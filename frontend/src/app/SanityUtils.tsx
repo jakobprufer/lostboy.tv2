@@ -1,5 +1,6 @@
 import { createClient, groq } from "next-sanity";
 import { CaseStudy } from "./types/CaseStudy";
+import { Project } from "./types/Project";
 
 // Common Sanity client configuration
 export const client = createClient({
