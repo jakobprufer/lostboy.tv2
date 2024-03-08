@@ -10,7 +10,7 @@ import Logo from "./Components/Logo";
 import Footer from "./Components/Footer";
 
 export const metadata: Metadata = {
-  title: "Lost Boy | Music Supervision London | Sonic Worlds",
+  title: "Lost Boy | Music Supervision London | Sonic Branding",
   description:
     "Lost Boy is a full-service creative music supervision house that helps translate brands into bespoke sonic worlds through music search, original composition, sound design and voice over.",
 };
