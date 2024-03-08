@@ -78,11 +78,13 @@ export default function Logo() {
           src="logos/Logo1.svg"
           draggable="false"
           className={`logo1 ${atHome ? "atHome" : null}`}
+          alt="Logo reading 'lost'"
         />
         <img
           src="logos/Logo2.svg"
           draggable="false"
           className={`logo2 ${atHome ? "atHome" : null}`}
+          alt="Logo reading 'lost'"
         />
       </div>
     </div>
