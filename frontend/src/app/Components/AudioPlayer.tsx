@@ -126,8 +126,9 @@ interface PlayerProps {
 const AudioPlayer: React.FC<PlayerProps> = ({ value }) => {
   const barRef = useRef<HTMLDivElement>(null);
 
-  //get current playing from Zustand
-  const { currentPlaying, setCurrentPlaying } = Zustand();
+  //get states from Zustand
+  const { currentPlaying, setCurrentPlaying, mouseOutEvent, mouseOverEvent } =
+    Zustand();
 
   const id = value._key;
   const { _ref: ref } = value.asset;
@@ -159,6 +160,8 @@ const AudioPlayer: React.FC<PlayerProps> = ({ value }) => {
             audioProps.playing ? "playing" : ""
           }`}
           onClick={audioProps.togglePlaying}
+          onMouseOut={mouseOutEvent}
+          onMouseOver={mouseOverEvent}
         >
           <div className="pPlayIcon"></div>
         </div>
