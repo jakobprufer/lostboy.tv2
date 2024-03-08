@@ -27,7 +27,7 @@ export async function getProjects() {
   return client.fetch(query);
 }
 
-export async function getCaseStudies() {
+export async function getCaseStudies(): Promise<CaseStudy[]> {
   const query = groq`*[_type == "caseStudy"]|order(_createdAt desc) {
     title,
     "icon": icon.asset->url,
@@ -36,7 +36,8 @@ export async function getCaseStudies() {
     "video": linkedWork->video.asset->url,
     "thumbnail": linkedWork->thumbnail.asset->url,
     "agency": linkedWork->agency,
-    "slug": linkedWork->slug.current
+    "slug": linkedWork->slug.current,
+    "modified": _updatedAt
   }`;
 
   return client.fetch(query);

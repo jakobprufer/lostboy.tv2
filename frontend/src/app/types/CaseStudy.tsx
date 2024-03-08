@@ -9,4 +9,5 @@ export type CaseStudy = {
   video: string;
   slug: string;
   content: PortableTextBlock[];
+  modified: string;
 };
