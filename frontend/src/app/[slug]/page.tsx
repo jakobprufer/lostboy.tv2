@@ -10,11 +10,6 @@ export default async function Detail({ params }: DetailProps) {
   const slug = params.slug;
   const caseStudy = await getCaseStudy(slug);
 
-  if (!caseStudy.slug) {
-    return {
-      notFound: true,
-    };
-
   return (
     <div className="pageContent detail">
       <div className="detailContent">
