@@ -8,6 +8,7 @@ import Header from "./Components/Header";
 import BurgerModal from "./Components/BurgerModal";
 import Logo from "./Components/Logo";
 import Footer from "./Components/Footer";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: "Lost Boy | Music Supervision London | Sonic Branding",
@@ -30,6 +31,7 @@ export default function RootLayout({
       className={`${manrope.variable} ${stardom.variable} ${freehand.variable}`}
     >
       <body className="page">
+        <Analytics />
         <StarryBackground />
         <Cursor />
         <Header />
