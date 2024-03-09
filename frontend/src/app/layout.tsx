@@ -9,6 +9,7 @@ import BurgerModal from "./Components/BurgerModal";
 import Logo from "./Components/Logo";
 import Footer from "./Components/Footer";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "Lost Boy | Music Supervision London | Sonic Branding",
@@ -32,6 +33,7 @@ export default function RootLayout({
     >
       <body className="page">
         <Analytics />
+        <SpeedInsights />
         <StarryBackground />
         <Cursor />
         <Header />
