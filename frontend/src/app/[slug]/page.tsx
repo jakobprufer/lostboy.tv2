@@ -6,6 +6,8 @@ type DetailProps = {
   params: { slug: string };
 };
 
+export const revalidate = 120;
+
 export default async function Detail({ params }: DetailProps) {
   const slug = params.slug;
   const caseStudy = await getCaseStudy(slug);
