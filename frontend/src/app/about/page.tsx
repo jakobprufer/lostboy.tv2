@@ -5,7 +5,7 @@ import CaseCard from "../Components/CaseCard";
 import { getCaseStudies } from "../SanityUtils";
 import { CaseStudy } from "../types/CaseStudy";
 
-export const revalidate = 120;
+export const revalidate = 10;
 
 export default async function About() {
   const caseStudies = await getCaseStudies();

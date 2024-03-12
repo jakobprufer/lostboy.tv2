@@ -55,7 +55,7 @@ export default defineType({
     }),
     defineField({
       name: 'thumbnail',
-      title: 'Thumbnail (max 0.5 MB)',
+      title: 'Thumbnail (max 0.5 MB, 16/9 aspect ratio)',
       type: 'image',
       validation: Rule => Rule.required(),
     }),
