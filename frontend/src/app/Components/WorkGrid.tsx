@@ -20,6 +20,13 @@ export default function WorkGrid({ projects }: WorkGridProps) {
   const [selectedVideo, setSelectedVideo] = useState("");
   // const [modalOpen, setModalOpen] = useState(false);
 
+  // Reset selectedVideo when component unmounts
+  useEffect(() => {
+    return () => {
+      setModalOpen(false);
+    };
+  }, []);
+
   //  video modal
   const openModal = (slug: string) => {
     setSelectedVideo(slug);
