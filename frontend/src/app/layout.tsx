@@ -10,11 +10,12 @@ import Logo from "./Components/Logo";
 import Footer from "./Components/Footer";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   title: "Lost Boy | Music Supervision London | Sonic Branding",
   description:
-    "Lost Boy is a full-service creative music supervision house that helps translate brands into bespoke sonic worlds through music search, original composition, sound design and voice over.",
+    "lostboy is a full service creative music supervision house which places an understanding of brand-identity at the heart of any composition process.",
 };
 
 export const viewport: Viewport = {
@@ -32,8 +33,9 @@ export default function RootLayout({
       className={`${manrope.variable} ${stardom.variable} ${freehand.variable}`}
     >
       <body className="page">
-        <Analytics />
-        <SpeedInsights />
+        {/* <Analytics />
+        <SpeedInsights /> */}
+        <GoogleAnalytics gaId="G-8Z7NBHG04F" />
         <StarryBackground />
         <Cursor />
         <Header />
