@@ -5,6 +5,7 @@ import { Zustand } from "../Zustand/Zustand";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import VideoModal from "./VideoModal";
+import { getImageDimensions } from "@sanity/asset-utils";
 
 // Define a type for the props expected by WorkGrid
 type WorkGridProps = {
@@ -62,10 +63,24 @@ export default function WorkGrid({ projects }: WorkGridProps) {
                   height={720}
                 />
               </div>
-              <div className="smallH mts stardom">{project.client}</div>
-              <div className="gridTitle">
-                {project.title}
-                {project.agency && ` (${project.agency})`}
+              <div className="workCardCaption">
+                {project.brandIcon ? (
+                  <Image
+                    src={project.brandIcon}
+                    className="workCardLogo"
+                    alt={`Logo of ${project.client}`}
+                    width={getImageDimensions(project.brandIcon).width}
+                    height={getImageDimensions(project.brandIcon).height}
+                  />
+                ) : null}
+
+                <div className="workCardTitle">
+                  <div className="smallH stardom">{project.client}</div>
+                  <div className="gridTitle">
+                    {project.title}
+                    {project.agency && ` (${project.agency})`}
+                  </div>
+                </div>
               </div>
             </div>
           ))}

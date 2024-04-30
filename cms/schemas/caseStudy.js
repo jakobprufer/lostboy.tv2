@@ -26,6 +26,12 @@ export default defineType({
           ]
     }),
     defineField({
+      name: 'showAbout',
+      title: 'Show a link to this project on about page?',
+      type: 'boolean',
+      validation: Rule => Rule.required(),
+    }),
+    defineField({
       name: 'icon',
       title: 'Brand Icon (.png) - Optional. Follow format of the existing case studies.',
       type: 'image',

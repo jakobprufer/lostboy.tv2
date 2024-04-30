@@ -2,6 +2,7 @@ import { PortableTextBlock } from "sanity";
 
 export type CaseStudy = {
   title: string;
+  showAbout: boolean;
   client: string;
   agency: string;
   thumbnail: string;

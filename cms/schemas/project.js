@@ -21,9 +21,15 @@ export default defineType({
     }),
     defineField({
       name: 'client',
-      title: 'Client',
+      title: 'Brand Name',
       validation: Rule => Rule.required(),
       type: 'string',
+    }),
+    defineField({
+      name: 'brandIcon',
+      title: 'Brand Icon (.png)',
+      type: 'image',
+      validation: Rule => Rule.required(),
     }),
     defineField({
       name: 'slug',

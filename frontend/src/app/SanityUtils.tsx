@@ -17,6 +17,7 @@ export async function getProjects() {
     title,
     "slug": slug.current,
     client,
+    "brandIcon": brandIcon.asset->url,
     orderRank,
     available,
     agency,
@@ -30,7 +31,8 @@ export async function getProjects() {
 export async function getCaseStudies(): Promise<CaseStudy[]> {
   const query = groq`*[_type == "caseStudy"]|order(_createdAt desc) {
     title,
-    "icon": icon.asset->url,
+    showAbout,
+    "icon": linkedWork->brandIcon.asset->url,
     content,
     "client": linkedWork->client,
     "video": linkedWork->video.asset->url,
@@ -47,7 +49,7 @@ export async function getCaseStudy(slug: string): Promise<CaseStudy> {
   const query = groq`*[_type == "caseStudy" && linkedWork->slug.current == $slug][0] {
     title,
     "slug": linkedWork->slug.current,
-    "icon": icon.asset->url,
+    "icon": linkedWork->brandIcon.asset->url,
     content,
     "client": linkedWork->client,
     "video": linkedWork->video.asset->url,
