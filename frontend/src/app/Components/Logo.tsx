@@ -72,7 +72,6 @@ export default function Logo() {
         className={`logo ${atHome ? "atHome" : null}`}
         onMouseOut={mouseOutEvent}
         onMouseOver={mouseOverEvent}
-        // style={{ transform: `scale(${Math.max(1, 5 - scrollY / 50)})` }}
       >
         <img
           src="logos/Logo1.svg"

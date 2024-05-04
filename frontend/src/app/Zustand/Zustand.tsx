@@ -35,7 +35,7 @@ export const Zustand = create<ZustandInterface>()((set) => ({
   mouseOverEvent: () => {},
   setMouseOverEvent: (mouseOverEvent: MouseEventHandler<HTMLElement>) =>
     set({ mouseOverEvent }),
-  atHome: false,
+  atHome: true,
   setAtHome: (atHome: boolean) => set({ atHome }),
   modalOpen: false,
   setModalOpen: (value: SetStateAction<boolean>) =>
