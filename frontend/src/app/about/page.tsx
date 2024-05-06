@@ -6,7 +6,7 @@ import { getCaseStudies } from "../SanityUtils";
 import { CaseStudy } from "../types/CaseStudy";
 import Script from "next/script";
 
-export const revalidate = 10;
+export const revalidate = 600;
 
 export default async function About() {
   const caseStudies = await getCaseStudies();
