@@ -31,11 +31,11 @@ export default defineType({
       type: 'boolean',
       validation: Rule => Rule.required(),
     }),
-    defineField({
-      name: 'icon',
-      title: 'Brand Icon (.png) - Optional. Follow format of the existing case studies.',
-      type: 'image',
-    }),
+    // defineField({
+    //   name: 'icon',
+    //   title: 'Brand Icon (.png) - Optional. Follow format of the existing case studies.',
+    //   type: 'image',
+    // }),
     defineField({
       name: 'content',
       type: 'array',
