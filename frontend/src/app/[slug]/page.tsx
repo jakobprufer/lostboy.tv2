@@ -7,7 +7,7 @@ type DetailProps = {
   params: { slug: string };
 };
 
-// export const revalidate = 600;
+export const revalidate = 10;
 
 export default async function Detail({ params }: DetailProps) {
   const slug = params.slug;

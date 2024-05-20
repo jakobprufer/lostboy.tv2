@@ -3,7 +3,7 @@ import { getProjects } from "./SanityUtils";
 import HomeContent from "./Components/HomeContent";
 import Script from "next/script";
 
-// export const revalidate = 600000;
+export const revalidate = 10;
 
 export default async function Home() {
   //get data
