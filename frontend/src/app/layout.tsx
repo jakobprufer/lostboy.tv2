@@ -15,7 +15,7 @@ import { Analytics } from "@vercel/analytics/react";
 export const metadata: Metadata = {
   title: "Lost Boy | Music Supervision London | Sonic Branding",
   description:
-    "lostboy is a full service creative music supervision house which places an understanding of brand-identity at the heart of any composition process.",
+    "Lost Boy is a full service creative music supervision house which places an understanding of brand-identity at the heart of any composition process.",
 };
 
 export const viewport: Viewport = {
