@@ -4,8 +4,9 @@ import { PortableText, PortableTextReactComponents } from "@portabletext/react";
 import urlBuilder from "@sanity/image-url";
 import { getImageDimensions } from "@sanity/asset-utils";
 import Image from "next/image";
-import { client } from "../SanityUtils";
-import { CaseStudy } from "../types/CaseStudy";
+// import { client } from "../SanityUtils";
+import { client } from "@/app/Sanity/SanityClient";
+import { CaseStudyType } from "../types/CaseStudy";
 import AudioPlayer from "./AudioPlayer";
 import VideoPlayer from "./VideoPlayer";
 
@@ -47,7 +48,7 @@ const components: Partial<PortableTextReactComponents> = {
 };
 
 interface CaseStudyContentProps {
-  caseStudy: CaseStudy; // Add the caseStudy prop with the correct type
+  caseStudy: CaseStudyType; // Add the caseStudy prop with the correct type
 }
 
 const CaseStudyContent: React.FC<CaseStudyContentProps> = ({ caseStudy }) => {

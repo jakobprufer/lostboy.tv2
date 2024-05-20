@@ -1,6 +1,6 @@
 import { PortableTextBlock } from "sanity";
 
-export type CaseStudy = {
+export type CaseStudyType = {
   title: string;
   showAbout: boolean;
   client: string;

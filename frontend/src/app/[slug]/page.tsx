@@ -1,7 +1,10 @@
 import React from "react";
-import { getCaseStudy } from "../SanityUtils";
+// import { getCaseStudy } from "../SanityUtils";
 import CaseStudyContent from "../Components/CaseStudyContent";
 import Script from "next/script";
+import { CaseStudyType } from "../types/CaseStudy";
+import { sanityFetch } from "@/app/Sanity/SanityClient";
+import { singleCaseQuery } from "../Sanity/SanityQuery";
 
 type DetailProps = {
   params: { slug: string };
@@ -10,8 +13,16 @@ type DetailProps = {
 // export const revalidate = 10;
 
 export default async function Detail({ params }: DetailProps) {
-  const slug = params.slug;
-  const caseStudy = await getCaseStudy(slug);
+  // const slug = params.slug;
+  // const caseStudy = await getCaseStudy(slug);
+  //get data
+  // const projects = await getProjects();
+  const caseStudy: CaseStudyType = await sanityFetch({
+    query: singleCaseQuery,
+    // You can add multiple tags that matches with your document _id: ['post', 'about', ...]
+    tags: ["caseStudy"],
+    qParams: { slug: params.slug },
+  });
 
   return (
     <div className="pageContent detail">

@@ -2,14 +2,23 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import CaseCard from "../Components/CaseCard";
-import { getCaseStudies } from "../SanityUtils";
-import { CaseStudy } from "../types/CaseStudy";
+// import { getCaseStudies } from "../SanityUtils";
+import { caseQuery } from "../Sanity/SanityQuery";
+import { CaseStudyType } from "../types/CaseStudy";
 import Script from "next/script";
+import { sanityFetch } from "@/app/Sanity/SanityClient";
 
 // export const revalidate = 10;
 
 export default async function About() {
-  const caseStudies = await getCaseStudies();
+  // const caseStudies = await getCaseStudies();
+
+  //get data
+  const caseStudies: CaseStudyType[] = await sanityFetch({
+    query: caseQuery,
+    // You can add multiple tags that matches with your document _id: ['post', 'about', ...]
+    tags: ["caseStudy"],
+  });
 
   return (
     <div className="pageContent about">

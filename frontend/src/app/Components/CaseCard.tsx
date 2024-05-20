@@ -3,10 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { Zustand } from "../Zustand/Zustand";
-import { CaseStudy } from "../types/CaseStudy";
+import { CaseStudyType } from "../types/CaseStudy";
 
 type CaseCardProps = {
-  caseStudy: CaseStudy;
+  caseStudy: CaseStudyType;
 };
 
 export default function CaseCard({ caseStudy }: CaseCardProps) {

@@ -10,7 +10,6 @@ export default defineConfig({
 
   projectId: 'vlugq6ei',
   dataset: 'production',
-
   plugins: [structureTool({
     structure: deskStructure,
     }), visionTool()],
