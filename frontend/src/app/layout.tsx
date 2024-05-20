@@ -8,9 +8,9 @@ import Header from "./Components/Header";
 import BurgerModal from "./Components/BurgerModal";
 import Logo from "./Components/Logo";
 import Footer from "./Components/Footer";
-import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: "Lost Boy | Music Supervision London | Sonic Branding",
@@ -35,6 +35,7 @@ export default function RootLayout({
       <body className="page">
         {/* <Analytics />
         <SpeedInsights /> */}
+        <Analytics />
         <GoogleAnalytics gaId="G-8Z7NBHG04F" />
         <StarryBackground />
         <Cursor />

@@ -45,9 +45,9 @@ export default async function About() {
               <span className="stardom" style={{ fontSize: "1.1em" }}>
                 lostboy
               </span>{" "}
-              is a full service creative music supervision house which places an
-              understanding of brand-identity at the heart of any composition
-              process.
+              is a brand new full service creative music supervision house which
+              places an understanding of brand-identity at the heart of any
+              composition process.
             </p>
             <p>
               Founded by You Are Here Executive Producer, Luca Antoniazzi - Our
