@@ -4,13 +4,13 @@ import HomeContent from "./Components/HomeContent";
 import Script from "next/script";
 import { sanityFetch } from "@/app/Sanity/SanityClient";
 import { projectQuery } from "@/app/Sanity/SanityQuery";
-import { Project } from "./types/Project";
+import { ProjectType } from "./types/Project";
 
 // export const revalidate = 10;
 
 export default async function Home() {
   //get data
-  const projects: Project[] = await sanityFetch({
+  const projects: ProjectType[] = await sanityFetch({
     query: projectQuery,
     // You can add multiple tags that matches with your document _id: ['post', 'about', ...]
     tags: ["project"],
