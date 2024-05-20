@@ -33,9 +33,8 @@ export default function RootLayout({
       className={`${manrope.variable} ${stardom.variable} ${freehand.variable}`}
     >
       <body className="page">
-        {/* <Analytics />
-        <SpeedInsights /> */}
         <Analytics />
+        <SpeedInsights />
         <GoogleAnalytics gaId="G-8Z7NBHG04F" />
         <StarryBackground />
         <Cursor />
