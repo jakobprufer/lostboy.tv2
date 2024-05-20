@@ -1,12 +1,13 @@
 "use client";
 import { useState } from "react";
-import { PortableText } from "@portabletext/react";
+import { PortableText, PortableTextReactComponents } from "@portabletext/react";
 import urlBuilder from "@sanity/image-url";
 import { getImageDimensions } from "@sanity/asset-utils";
 import Image from "next/image";
 import { client } from "../SanityUtils";
 import { CaseStudy } from "../types/CaseStudy";
 import AudioPlayer from "./AudioPlayer";
+import VideoPlayer from "./VideoPlayer";
 
 interface SanityImageValue {
   _id: string;
@@ -37,10 +38,11 @@ const SanityImage: React.FC<SanityImageProps> = ({ value }) => {
   );
 };
 
-const components = {
+const components: Partial<PortableTextReactComponents> = {
   types: {
     image: SanityImage,
     file: AudioPlayer,
+    video: VideoPlayer,
   },
 };
 

@@ -78,6 +78,19 @@ export default defineType({
               title: 'Caption'
             }
           ]
+        },
+        {
+          type: 'file',
+          name: 'video',
+          title: 'MP4 Video',
+          accept: ".mp4",
+          fields: [
+            {
+              name: 'caption',
+              type: 'string',
+              title: 'Caption'
+            }
+          ]
         }
       ]
     }),
