@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { Project } from "../types/Project";
+import { ProjectType } from "../types/Project";
 import { Zustand } from "../Zustand/Zustand";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
@@ -9,7 +9,7 @@ import { getImageDimensions } from "@sanity/asset-utils";
 
 // Define a type for the props expected by WorkGrid
 type WorkGridProps = {
-  projects: Project[];
+  projects: ProjectType[];
 };
 
 // Use the WorkGridProps type to type the function component's props

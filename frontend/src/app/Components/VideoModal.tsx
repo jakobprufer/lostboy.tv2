@@ -3,13 +3,13 @@ import { useState, Fragment } from "react";
 import { RiArrowRightLine, RiArrowLeftLine } from "react-icons/ri";
 import useMeasure from "react-use-measure";
 import { AnimatePresence, motion } from "framer-motion";
-import { Project } from "../types/Project";
+import { ProjectType } from "../types/Project";
 import { Zustand } from "../Zustand/Zustand";
 
 type VideoModalProps = {
   setModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
   selectedVideo: string;
-  projects: Project[];
+  projects: ProjectType[];
   modalOpen: boolean;
 };
 

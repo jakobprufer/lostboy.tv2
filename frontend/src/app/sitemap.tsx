@@ -1,12 +1,18 @@
-import { getCaseStudies } from "./SanityUtils";
-import { CaseStudy } from "./types/CaseStudy";
+import { caseQuery } from "./Sanity/SanityQuery";
+import { CaseStudyType } from "./types/CaseStudy";
+import { sanityFetch } from "./Sanity/SanityClient";
 
 const URL = "https://lostboy.tv";
 
 export default async function sitemap() {
-  const caseStudies = await getCaseStudies();
+  const caseStudies: CaseStudyType[] = await sanityFetch({
+    query: caseQuery,
+    // You can add multiple tags that matches with your document _id: ['post', 'about', ...]
+    tags: ["caseStudy"],
+  });
+  // const caseStudies = await getCaseStudies();
 
-  const caseStudyUrls = caseStudies.map((caseStudy: CaseStudy) => ({
+  const caseStudyUrls = caseStudies.map((caseStudy: CaseStudyType) => ({
     url: `${URL}/${caseStudy.slug}`,
     lastModified: caseStudy.modified,
   }));
